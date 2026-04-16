@@ -106,4 +106,10 @@ After pulling changes, re-run this command to sync the skill to Claude Code.
 
 ## Font notes
 
-Custom fonts (MD Nichrome Test, Hauora) are not on Google Fonts and won't load in most email clients. The output uses them as `font-family` declarations with `Arial, sans-serif` as fallback — they will render in Gmail webmail but fall back to Arial everywhere else. Inter is on Google Fonts and will load in webmail clients.
+Fonts are always set exactly as specified in Figma — no Arial fallback. The three fonts used across HitPay email templates are:
+
+- `MD Nichrome Test` — headings and hero title
+- `Hauora` — body text, stat cards, CTA copy, default fallback for unclassified text
+- `Inter` — footer address and unsubscribe link
+
+When writing or editing custom scripts, never add `, Arial, sans-serif` after a font name. If a font name is unknown or missing from the Figma node, default to `Hauora`.

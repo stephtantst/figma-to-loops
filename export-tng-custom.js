@@ -151,7 +151,7 @@ const statCard = (icon, html) => `
                     <td width="56" valign="middle" align="right" style="padding-right:16px;">
                       <img src="${icon}" width="40" height="40" alt="" style="display:block;" />
                     </td>
-                    <td valign="middle" style="font-family:'Hauora',Arial,sans-serif;font-size:14px;font-weight:700;color:#000000;line-height:1.35;">${html}</td>
+                    <td valign="middle" style="font-family:'Hauora';font-size:14px;font-weight:700;color:#000000;line-height:1.35;">${html}</td>
                   </tr>
                 </table>
               </td>
@@ -163,7 +163,7 @@ function generateMJML() {
     <mj-font name="Hauora" href="https://fonts.googleapis.com/css2?family=Hauora:wght@400;700&display=swap" />
     <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     <mj-attributes>
-      <mj-all font-family="Arial, sans-serif" />
+      <mj-all font-family="Hauora" />
       <mj-body width="600px" />
       <mj-text padding="0" />
       <mj-image padding="0" />
@@ -182,7 +182,7 @@ function generateMJML() {
     <!-- Hero Title — MD Nichrome Test Bold 32px, light blue gradient background -->
     <mj-section background-url="img/gradient_hero.png" background-size="100% 100%" background-color="#EAF3FF" padding="28px 32px 0 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Test', Arial, sans-serif" font-size="32px" font-weight="700" color="#000000" align="center" line-height="43px" padding="0">TnG for Subscriptions <span style="color:#2388ff;">(MY)</span> is now LIVE!</mj-text>
+        <mj-text font-family="'MD Nichrome Test'" font-size="32px" font-weight="700" color="#000000" align="center" line-height="43px" padding="0">TnG for Subscriptions <span style="color:#2388ff;">(MY)</span> is now LIVE!</mj-text>
         <mj-spacer height="4px" />
       </mj-column>
     </mj-section>
@@ -197,14 +197,14 @@ function generateMJML() {
     <!-- Intro Paragraph — Hauora Regular 15px -->
     <mj-section background-color="#ffffff" padding="10px 30px 10px 32px">
       <mj-column>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="15px" color="#03102f" align="left" line-height="21px" padding="0">You can now accept Touch &#x2019;n Go (TnG) for recurring payments in Malaysia, not just one-time transactions.</mj-text>
+        <mj-text font-family="'Hauora'" font-size="15px" color="#03102f" align="left" line-height="21px" padding="0">You can now accept Touch &#x2019;n Go (TnG) for recurring payments in Malaysia, not just one-time transactions.</mj-text>
       </mj-column>
     </mj-section>
 
     <!-- Benefits Heading — MD Nichrome Test Dark 30px -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Test', Arial, sans-serif" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">Benefits:</mj-text>
+        <mj-text font-family="'MD Nichrome Test'" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">Benefits:</mj-text>
       </mj-column>
     </mj-section>
 
@@ -223,21 +223,21 @@ function generateMJML() {
     <!-- Merchant Onboarding Heading — MD Nichrome Test Dark 30px -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Test', Arial, sans-serif" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">Merchant Onboarding:</mj-text>
+        <mj-text font-family="'MD Nichrome Test'" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">Merchant Onboarding:</mj-text>
       </mj-column>
     </mj-section>
 
     <!-- Merchant Onboarding — Hauora Regular 16px, bullet list -->
     <mj-section background-color="#ffffff" padding="10px 30px 10px 32px">
       <mj-column>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="16px" color="#03102f" align="left" line-height="22px" padding="0">&#x2022; Automatically enabled for all verified MY merchants</mj-text>
+        <mj-text font-family="'Hauora'" font-size="16px" color="#03102f" align="left" line-height="22px" padding="0">&#x2022; Automatically enabled for all verified MY merchants</mj-text>
       </mj-column>
     </mj-section>
 
     <!-- How to Accept Heading — MD Nichrome Test Dark 30px -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Test', Arial, sans-serif" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">How to accept Touch &#x2019;n Go for Subscriptions:</mj-text>
+        <mj-text font-family="'MD Nichrome Test'" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">How to accept Touch &#x2019;n Go for Subscriptions:</mj-text>
       </mj-column>
     </mj-section>
 
@@ -248,7 +248,7 @@ function generateMJML() {
           <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
             <tr>
               <td style="background-color:#f9f9fb;border-radius:8px;padding:10px 32px 10px 32px;">
-                <ol style="font-family:'Hauora',Arial,sans-serif;font-size:14px;color:#000000;line-height:1.5;margin:0;padding-left:20px;">
+                <ol style="font-family:'Hauora';font-size:14px;color:#000000;line-height:1.5;margin:0;padding-left:20px;">
                   <li style="margin-bottom:8px;">Create a subscription and share the link with your customers.</li>
                   <li style="margin-bottom:8px;">At checkout, customers simply select Touch &#x2019;n Go and link their account.</li>
                   <li>Once the first payment is completed, all future renewals are automatically charged to their linked Touch &#x2019;n Go account based on the subscription cycle.</li>
@@ -263,7 +263,7 @@ function generateMJML() {
     <!-- Fees & Payouts Heading — MD Nichrome Test Dark 30px -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Test', Arial, sans-serif" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">Fees &amp; Payouts:</mj-text>
+        <mj-text font-family="'MD Nichrome Test'" font-size="30px" color="#000000" align="left" line-height="34px" padding="0" font-weight="800">Fees &amp; Payouts:</mj-text>
       </mj-column>
     </mj-section>
 
@@ -277,8 +277,8 @@ function generateMJML() {
     <!-- Help CTA — Hauora Bold 20px heading + Regular 14px body, warm-to-blue gradient -->
     <mj-section background-url="img/gradient_cta.png" background-size="100% 100%" background-color="#EAF3FF" padding="40px 16px 40px 16px">
       <mj-column>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="20px" font-weight="700" color="#000000" align="center" line-height="1.21" padding="0 0 8px 0">Need help or have any questions?</mj-text>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="14px" color="#61667c" align="center" line-height="1.35" padding="0">If you need help with getting the most out of HitPay, we&#x2019;re here for you.<br/>Email us at <a href="mailto:support@hitpayapp.com" style="color:#61667c;">support@hitpayapp.com</a> and our team will be in touch.</mj-text>
+        <mj-text font-family="'Hauora'" font-size="20px" font-weight="700" color="#000000" align="center" line-height="1.21" padding="0 0 8px 0">Need help or have any questions?</mj-text>
+        <mj-text font-family="'Hauora'" font-size="14px" color="#61667c" align="center" line-height="1.35" padding="0">If you need help with getting the most out of HitPay, we&#x2019;re here for you.<br/>Email us at <a href="mailto:support@hitpayapp.com" style="color:#61667c;">support@hitpayapp.com</a> and our team will be in touch.</mj-text>
         <mj-spacer height="4px" />
       </mj-column>
     </mj-section>
@@ -286,9 +286,9 @@ function generateMJML() {
     <!-- Footer — Inter Regular 13px address, 12px unsubscribe -->
     <mj-section background-color="#03102f" padding="16px 16px 16px 16px">
       <mj-column>
-        <mj-text font-family="'Inter', Arial, sans-serif" font-size="13px" color="#cbcdd4" align="center" line-height="1.38" padding="0 0 16px 0">HitPay Payment Solutions Pte Ltd<br/>88 Market Street - Level #40-01, CapitaSpring<br/>Singapore, 048948</mj-text>
+        <mj-text font-family="'Inter'" font-size="13px" color="#cbcdd4" align="center" line-height="1.38" padding="0 0 16px 0">HitPay Payment Solutions Pte Ltd<br/>88 Market Street - Level #40-01, CapitaSpring<br/>Singapore, 048948</mj-text>
         <mj-image src="img/social.png" width="144px" align="center" alt="Follow us on social media" padding="0 0 16px 0" />
-        <mj-text font-family="'Inter', Arial, sans-serif" font-size="12px" color="#cbcdd4" align="center" line-height="1.5" padding="0"><a href="{unsubscribe_link}" style="color:#cbcdd4;text-decoration:underline;">Unsubscribe</a></mj-text>
+        <mj-text font-family="'Inter'" font-size="12px" color="#cbcdd4" align="center" line-height="1.5" padding="0"><a href="{unsubscribe_link}" style="color:#cbcdd4;text-decoration:underline;">Unsubscribe</a></mj-text>
       </mj-column>
     </mj-section>
 

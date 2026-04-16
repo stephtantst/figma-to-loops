@@ -121,10 +121,12 @@ CLAUDE.md                   Reference for Claude Code agents
 
 ## Font compatibility
 
-| Font | Loads in email? |
-|------|----------------|
-| MD Nichrome Test | ❌ Not on Google Fonts — falls back to Arial |
-| Hauora | ❌ Not on Google Fonts — falls back to Arial |
-| Inter | ✅ Google Fonts — loads in Gmail webmail |
+Fonts are always set exactly as defined in the Figma file — no fallbacks.
 
-Custom fonts render correctly in Gmail webmail. All other clients fall back to Arial.
+| Font | Used for |
+|------|----------|
+| MD Nichrome Test | Headings (Benefits, Merchant Onboarding, etc.) and hero title |
+| Hauora | Body text, stat card labels, CTA copy |
+| Inter | Footer address and unsubscribe link |
+
+MD Nichrome Test and Hauora are not on Google Fonts. To ensure they render correctly in all email clients, host the font files and add `@font-face` declarations — or load them via a font delivery service before sending.

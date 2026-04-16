@@ -281,8 +281,8 @@ function mjmlAlign(align) {
 function genText(node) {
   const style = node.style || {};
   const color = solidFill(node.fills) || '#000000';
-  const fontFamilyRaw = style.fontFamily || 'Arial';
-  const fontFamily = escapeXml(fontFamilyRaw) + ', Arial, sans-serif';
+  const fontFamilyRaw = style.fontFamily || 'Hauora';
+  const fontFamily = escapeXml(fontFamilyRaw);
   const fontSize = style.fontSize ? Math.round(style.fontSize) + 'px' : '14px';
   const fontWeight = style.fontWeight || 400;
   const lineHeight = style.lineHeightPx ? Math.round(style.lineHeightPx) + 'px' : '1.5';
@@ -531,7 +531,7 @@ function generateMJML(doc, frameName, frameWidth) {
     '  <mj-head>',
     fontDecls,
     '    <mj-attributes>',
-    '      <mj-all font-family="Arial, sans-serif" />',
+    '      <mj-all font-family="Hauora" />',
     '      <mj-body width="' + w + 'px" />',
     '      <mj-text padding="0" />',
     '      <mj-image padding="0" />',

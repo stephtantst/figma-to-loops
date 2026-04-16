@@ -170,7 +170,7 @@ function generateMJML() {
                     <td width="56" valign="middle" align="right" style="padding-right:16px;">
                       <img src="${icon}" width="40" height="40" alt="" style="display:block;" />
                     </td>
-                    <td valign="middle" style="font-family:Arial,sans-serif;font-size:14px;color:#000000;line-height:1.35;">${html}</td>
+                    <td valign="middle" style="font-family:'Hauora';font-size:14px;color:#000000;line-height:1.35;">${html}</td>
                   </tr>
                 </table>
               </td>
@@ -180,7 +180,7 @@ function generateMJML() {
               <td width="168" valign="top">
                 <img src="${img}" width="168" height="168" alt="" style="display:block;border-radius:10px;width:168px;height:168px;object-fit:cover;" />
                 <div style="height:16px;font-size:0;line-height:0;">&nbsp;</div>
-                <p style="font-family:Arial,sans-serif;font-size:12px;color:#000000;margin:0;line-height:1.5;"><strong>${titleHtml}</strong><br/>${bodyHtml}</p>
+                <p style="font-family:'Hauora';font-size:12px;color:#000000;margin:0;line-height:1.5;"><strong>${titleHtml}</strong><br/>${bodyHtml}</p>
               </td>`;
 
   const wayRow = (imgSrc, titleHtml, bodyHtml) => `
@@ -190,8 +190,8 @@ function generateMJML() {
           <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
             <tr>
               <td width="284" valign="middle" style="padding:8px 32px 8px 0;vertical-align:middle;">
-                <p style="font-family:Arial,sans-serif;font-size:20px;font-weight:700;color:#000000;margin:0 0 8px 0;line-height:1.2;">${titleHtml}</p>
-                <p style="font-family:Arial,sans-serif;font-size:11px;color:#000000;margin:0;line-height:1.5;">${bodyHtml}</p>
+                <p style="font-family:'Hauora';font-size:20px;font-weight:700;color:#000000;margin:0 0 8px 0;line-height:1.2;">${titleHtml}</p>
+                <p style="font-family:'Hauora';font-size:11px;color:#000000;margin:0;line-height:1.5;">${bodyHtml}</p>
               </td>
               <td width="252" valign="middle" style="vertical-align:middle;">
                 <img src="${imgSrc}" width="252" height="190" alt="" style="display:block;border-radius:8px;width:252px;object-fit:cover;" />
@@ -207,7 +207,7 @@ function generateMJML() {
     <mj-font name="MD Nichrome Trial" href="https://fonts.googleapis.com/css2?family=MD+Nichrome+Trial:wght@400;700&display=swap" />
     <mj-font name="Hauora" href="https://fonts.googleapis.com/css2?family=Hauora:wght@400;700&display=swap" />
     <mj-attributes>
-      <mj-all font-family="Arial, sans-serif" />
+      <mj-all font-family="Hauora" />
       <mj-body width="600px" />
       <mj-text padding="0" />
       <mj-image padding="0" />
@@ -226,7 +226,7 @@ function generateMJML() {
     <!-- Hero Title — light blue gradient background -->
     <mj-section background-url="img/gradient_hero.png" background-size="100% 100%" background-color="#EAF3FF" padding="28px 32px 0 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Trial', Arial, sans-serif" font-size="32px" font-weight="700" color="#000000" align="center" line-height="43px" padding="0">The Key to Malaysia Is Here:<br/>Accept DuitNow QR Now</mj-text>
+        <mj-text font-family="'MD Nichrome Trial'" font-size="32px" font-weight="700" color="#000000" align="center" line-height="43px" padding="0">The Key to Malaysia Is Here:<br/>Accept DuitNow QR Now</mj-text>
         <mj-spacer height="4px" />
       </mj-column>
     </mj-section>
@@ -241,21 +241,21 @@ function generateMJML() {
     <!-- Intro Paragraph -->
     <mj-section background-color="#ffffff" padding="20px 30px 5px 32px">
       <mj-column>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="16px" color="#03102f" line-height="22px" padding="0">Now instantly available for international merchants (i.e. Singapore, Philippines, and more) via HitPay &#x2014; no local entity required.</mj-text>
+        <mj-text font-family="'Hauora'" font-size="16px" color="#03102f" line-height="22px" padding="0">Now instantly available for international merchants (i.e. Singapore, Philippines, and more) via HitPay &#x2014; no local entity required.</mj-text>
       </mj-column>
     </mj-section>
 
     <!-- Why DuitNow Heading -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Trial', Arial, sans-serif" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">Why DuitNow Is Your Gateway to Malaysia</mj-text>
+        <mj-text font-family="'MD Nichrome Trial'" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">Why DuitNow Is Your Gateway to Malaysia</mj-text>
       </mj-column>
     </mj-section>
 
     <!-- Why DuitNow Body -->
     <mj-section background-color="#ffffff" padding="10px 30px 10px 32px">
       <mj-column>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="16px" color="#03102f" line-height="22px" padding="0">Accept payments in Malaysia from Touch &#x2019;n Go to every major bank.<br/><br/>Skip the local setup and bank hurdles; start accepting MYR instantly via DuitNow on HitPay</mj-text>
+        <mj-text font-family="'Hauora'" font-size="16px" color="#03102f" line-height="22px" padding="0">Accept payments in Malaysia from Touch &#x2019;n Go to every major bank.<br/><br/>Skip the local setup and bank hurdles; start accepting MYR instantly via DuitNow on HitPay</mj-text>
       </mj-column>
     </mj-section>
 
@@ -274,14 +274,14 @@ function generateMJML() {
     <!-- CTA Button 1 -->
     <mj-section background-color="#ffffff" padding="20px 0 25px 0">
       <mj-column>
-        <mj-button background-color="#4179e2" color="#ffffff" border-radius="8px" inner-padding="10px 12px" href="https://dashboard.hit-pay.com/" align="center" font-family="'Hauora', Arial, sans-serif" font-size="14px" font-weight="700">Start Transacting with DuitNow QR Now</mj-button>
+        <mj-button background-color="#4179e2" color="#ffffff" border-radius="8px" inner-padding="10px 12px" href="https://dashboard.hit-pay.com/" align="center" font-family="'Hauora'" font-size="14px" font-weight="700">Start Transacting with DuitNow QR Now</mj-button>
       </mj-column>
     </mj-section>
 
     <!-- Who Benefits Heading -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Trial', Arial, sans-serif" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">Who Benefits</mj-text>
+        <mj-text font-family="'MD Nichrome Trial'" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">Who Benefits</mj-text>
       </mj-column>
     </mj-section>
 
@@ -302,7 +302,7 @@ function generateMJML() {
     <!-- Payment Details Heading -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Trial', Arial, sans-serif" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">Payment Details</mj-text>
+        <mj-text font-family="'MD Nichrome Trial'" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">Payment Details</mj-text>
       </mj-column>
     </mj-section>
 
@@ -316,7 +316,7 @@ function generateMJML() {
     <!-- CTA Button 2 -->
     <mj-section background-color="#ffffff" padding="20px 0 25px 0">
       <mj-column>
-        <mj-button background-color="#4179e2" color="#ffffff" border-radius="8px" inner-padding="10px 12px" href="https://dashboard.hit-pay.com/" align="center" font-family="'Hauora', Arial, sans-serif" font-size="14px" font-weight="700">Unlock Malaysia with DuitNow Today!</mj-button>
+        <mj-button background-color="#4179e2" color="#ffffff" border-radius="8px" inner-padding="10px 12px" href="https://dashboard.hit-pay.com/" align="center" font-family="'Hauora'" font-size="14px" font-weight="700">Unlock Malaysia with DuitNow Today!</mj-button>
       </mj-column>
     </mj-section>
 
@@ -330,7 +330,7 @@ function generateMJML() {
     <!-- 3 Ways Heading -->
     <mj-section background-color="#ffffff" padding="15px 32px 5px 32px">
       <mj-column>
-        <mj-text font-family="'MD Nichrome Trial', Arial, sans-serif" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">3 Powerful Ways to Start Selling in MYR</mj-text>
+        <mj-text font-family="'MD Nichrome Trial'" font-size="30px" font-weight="700" color="#000000" line-height="34px" padding="0">3 Powerful Ways to Start Selling in MYR</mj-text>
       </mj-column>
     </mj-section>
 
@@ -355,8 +355,8 @@ function generateMJML() {
     <!-- Banner: Need Help — warm-to-blue gradient background -->
     <mj-section background-url="img/gradient_banner.png" background-size="100% 100%" background-color="#EAF3FF" padding="32px 32px 40px 32px">
       <mj-column>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="20px" font-weight="700" color="#000000" align="center" line-height="1.21" padding="0 0 8px 0">Need help or have any questions?</mj-text>
-        <mj-text font-family="'Hauora', Arial, sans-serif" font-size="14px" color="#61667c" align="center" line-height="1.35" padding="0 0 16px 0">If you need help with getting the most out of HitPay, we&#x2019;re here for you.<br/>Reply to this email and our team will be in touch.</mj-text>
+        <mj-text font-family="'Hauora'" font-size="20px" font-weight="700" color="#000000" align="center" line-height="1.21" padding="0 0 8px 0">Need help or have any questions?</mj-text>
+        <mj-text font-family="'Hauora'" font-size="14px" color="#61667c" align="center" line-height="1.35" padding="0 0 16px 0">If you need help with getting the most out of HitPay, we&#x2019;re here for you.<br/>Reply to this email and our team will be in touch.</mj-text>
         <mj-image src="img/help_banner.png" width="536px" alt="" padding="0" border-radius="10px" />
       </mj-column>
     </mj-section>
@@ -364,7 +364,7 @@ function generateMJML() {
     <!-- Footer -->
     <mj-section background-color="#03102f" padding="16px">
       <mj-column>
-        <mj-text font-family="Arial, sans-serif" font-size="13px" color="#cbcdd4" align="center" line-height="1.38" padding="0 0 16px 0">HitPay Payment Solutions Pte Ltd<br/>88 Market Street - Level #40-01, CapitaSpring<br/>Singapore, 048948</mj-text>
+        <mj-text font-family="'Inter'" font-size="13px" color="#cbcdd4" align="center" line-height="1.38" padding="0 0 16px 0">HitPay Payment Solutions Pte Ltd<br/>88 Market Street - Level #40-01, CapitaSpring<br/>Singapore, 048948</mj-text>
         <mj-raw>
           <table cellpadding="0" cellspacing="0" border="0" role="presentation" align="center" style="margin:0 auto 16px auto;">
             <tr>
@@ -375,7 +375,7 @@ function generateMJML() {
             </tr>
           </table>
         </mj-raw>
-        <mj-text font-family="Arial, sans-serif" font-size="12px" color="#cbcdd4" align="center" line-height="1.5" padding="0"><a href="{unsubscribe_link}" style="color:#cbcdd4;text-decoration:underline;">Unsubscribe</a></mj-text>
+        <mj-text font-family="'Inter'" font-size="12px" color="#cbcdd4" align="center" line-height="1.5" padding="0"><a href="{unsubscribe_link}" style="color:#cbcdd4;text-decoration:underline;">Unsubscribe</a></mj-text>
       </mj-column>
     </mj-section>
 

@@ -60,6 +60,7 @@ If you rewrote sections, create a custom script (named `export-<frame-name>-cust
 - `RASTER_NODES` array — node IDs from the MCP output `data-node-id` attributes
 - `generateMJML()` — hand-crafted MJML using correct font families (`'MD Nichrome Test', Arial, sans-serif` / `'Hauora', Arial, sans-serif` / `'Inter', Arial, sans-serif`) — **never replace with just `Arial`**
 - Gradient PNGs — `makeHeroGradient()` / `makeBannerGradient()` are pre-built for the standard HitPay blue gradient; reuse or derive new ones from the MCP `rgba(...)` stop values
+- **Never add `, Arial, sans-serif` after any font name** — fonts must exactly match Figma: `'MD Nichrome Test'`, `'Hauora'`, or `'Inter'`. Default to `'Hauora'` if a font is unknown
 
 Run it:
 ```bash
