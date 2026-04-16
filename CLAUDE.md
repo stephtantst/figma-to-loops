@@ -88,9 +88,21 @@ Claude will run the generic exporter, compare the output against the Figma scree
 export-api.js               Generic exporter (use this first)
 export-duitnow-custom.js    Custom script for DuitNow XB EDM
 export-tng-custom.js        Custom script for TnG Recurring EDM
+skills/loops-zip/SKILL.md   Claude Code skill definition (version-controlled here)
 src/                        Figma plugin source (separate tool)
 manifest.json               Figma plugin manifest
 ```
+
+## Installing the Claude skill
+
+The `skills/loops-zip/SKILL.md` file is the source of truth for the `/loops-zip` Claude Code skill. To install or update it on a new machine:
+
+```bash
+mkdir -p ~/.claude/skills/loops-zip
+cp skills/loops-zip/SKILL.md ~/.claude/skills/loops-zip/SKILL.md
+```
+
+After pulling changes, re-run this command to sync the skill to Claude Code.
 
 ## Font notes
 
