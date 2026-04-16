@@ -126,6 +126,18 @@ Claude will run the generic exporter, compare against the Figma screenshot, and 
 
 ---
 
+## Updating the bundle
+
+Whenever `export-api.js` changes, regenerate `figma-to-loops.js` and commit it:
+
+```bash
+npm run bundle
+git add figma-to-loops.js && git commit -m "Rebuild bundle"
+git push
+```
+
+---
+
 ## Project structure
 
 ```
