@@ -419,7 +419,7 @@ function generateReadme() {
 // ---------------------------------------------------------------------------
 
 async function buildZip(outPath, files) {
-  const JSZip = require('./node_modules/jszip');
+  const JSZip = require('jszip');
   const zip = new JSZip();
   for (const [name, data] of files) {
     zip.file(name, data);

@@ -17,15 +17,35 @@ Export Figma email frames to Loops-ready MJML + images ZIPs — no design tools,
 - **Node.js** v18+
 - **A Figma personal access token** — Figma → Settings → Account → Personal access tokens → Generate. Starts with `figd_...`
 
-Install dependencies once:
+---
+
+## Option A — Download the single-file CLI (no install needed)
+
+Download [`figma-to-loops.js`](https://raw.githubusercontent.com/stephtantst/figma-to-loops/main/figma-to-loops.js) from this repo and run it directly. No `npm install` required.
 
 ```bash
-npm install
+# Download once
+curl -O https://raw.githubusercontent.com/stephtantst/figma-to-loops/main/figma-to-loops.js
+
+# Run
+FIGMA_TOKEN=figd_... node figma-to-loops.js "https://www.figma.com/design/<fileKey>/...?node-id=123-456"
 ```
+
+Output: `<frame-name>_loops.zip` in the current directory.
 
 ---
 
-## Quick start
+## Option B — Clone the repo (for custom scripts and skill)
+
+Use this if you need to create custom export scripts or use the Claude Code skill.
+
+```bash
+git clone https://github.com/stephtantst/figma-to-loops.git
+cd figma-to-loops
+npm install
+```
+
+Then run the generic exporter:
 
 ```bash
 FIGMA_TOKEN=figd_... node export-api.js "https://www.figma.com/design/<fileKey>/...?node-id=123-456"

@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node build.js",
     "watch": "node build.js --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "bundle": "esbuild export-api.js --bundle --platform=node --outfile=figma-to-loops.js --external:https --external:http --external:fs --external:path --external:zlib"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.101.0",
