@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Figma plugin build output
+dist/
+
+# Generated ZIPs (export output — not source)
+*.zip
+
+# Screenshot exports
+*.png
+emails-*/
+
+# Claude workspace
+.claude/

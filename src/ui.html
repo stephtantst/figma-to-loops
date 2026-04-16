@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figma to Loops</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f5f5f5;
+      --color-border: #e0e0e0;
+      --color-text: #1a1a1a;
+      --color-text-secondary: #666666;
+      --color-loops: #6b4eff;
+      --color-loops-hover: #5a3ee0;
+      --color-success: #22c55e;
+      --color-error: #ef4444;
+      --color-warning: #f59e0b;
+      --radius: 8px;
+      --radius-sm: 4px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 12px;
+      color: var(--color-text);
+      background: var(--color-bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────────── */
+    .header {
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--color-loops);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo svg { display: block; }
+
+    .header-text h1 {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .header-text p {
+      font-size: 11px;
+      color: var(--color-text-secondary);
+      margin-top: 1px;
+    }
+
+    /* ── Main content ────────────────────────────────────────────────────── */
+    .content {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ── Frame list (Emailify-style) ─────────────────────────────────────── */
+    .frame-list {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-height: 160px;
+      overflow-y: auto;
+    }
+
+    .frame-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--color-border);
+      transition: background 0.1s;
+      user-select: none;
+    }
+
+    .frame-item:last-child { border-bottom: none; }
+    .frame-item:hover:not(.selected) { background: #f0ecff; }
+
+    .frame-item.selected {
+      background: #ede9ff;
+    }
+
+    .frame-item-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-text-secondary);
+      width: 14px;
+    }
+
+    .frame-item.selected .frame-item-icon { color: var(--color-loops); }
+
+    .frame-item-name {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--color-text);
+    }
+
+    .frame-item.selected .frame-item-name { color: #4c1d95; }
+
+    .frame-item-size {
+      font-size: 11px;
+      color: var(--color-text-secondary);
+      flex-shrink: 0;
+    }
+
+    .frame-item.selected .frame-item-size { color: #6d28d9; }
+
+    .frame-list-empty {
+      padding: 16px 12px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+
+    /* ── How it works ────────────────────────────────────────────────────── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-loops);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 11px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .step-text strong { color: var(--color-text); }
+
+    /* ── Status bar ──────────────────────────────────────────────────────── */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      min-height: 36px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .status-bar.idle { background: var(--color-surface); color: var(--color-text-secondary); }
+    .status-bar.loading { background: #ede9ff; color: #5b21b6; }
+    .status-bar.success { background: #dcfce7; color: #15803d; }
+    .status-bar.error { background: #fee2e2; color: #b91c1c; }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .idle .status-dot { background: var(--color-text-secondary); }
+    .loading .status-dot { background: var(--color-loops); animation: pulse 1.2s infinite; }
+    .success .status-dot { background: var(--color-success); }
+    .error .status-dot { background: var(--color-error); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ── Link input row ─────────────────────────────────────────────────── */
+    .link-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .link-input {
+      flex: 1;
+      padding: 7px 10px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-family: inherit;
+      color: var(--color-text);
+      background: var(--color-surface);
+      outline: none;
+      min-width: 0;
+    }
+
+    .link-input:focus {
+      border-color: var(--color-loops);
+      background: #fff;
+    }
+
+    .link-input::placeholder { color: #aaa; }
+
+    .link-btn {
+      padding: 7px 12px;
+      background: var(--color-surface);
+      color: var(--color-loops);
+      border: 1px solid var(--color-loops);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.1s;
+    }
+
+    .link-btn:hover:not(:disabled) { background: #ede9ff; }
+    .link-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── Export button ───────────────────────────────────────────────────── */
+    .export-btn {
+      width: 100%;
+      padding: 10px 16px;
+      background: var(--color-loops);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .export-btn:hover:not(:disabled) { background: var(--color-loops-hover); }
+    .export-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    .footer {
+      padding: 10px 16px;
+      border-top: 1px solid var(--color-border);
+      font-size: 10px;
+      color: var(--color-text-secondary);
+      text-align: center;
+    }
+
+    .footer a { color: var(--color-loops); text-decoration: none; }
+
+    /* ── Section header ──────────────────────────────────────────────────── */
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+      margin-bottom: 6px;
+    }
+
+    /* ── Zip contents preview ────────────────────────────────────────────── */
+    .zip-preview {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+    }
+
+    .zip-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 3px 0;
+      color: var(--color-text-secondary);
+    }
+
+    .zip-row .filename {
+      color: var(--color-text);
+      font-weight: 500;
+      font-family: 'Menlo', 'Monaco', monospace;
+    }
+
+    .zip-badge {
+      margin-left: auto;
+      padding: 1px 5px;
+      border-radius: 99px;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .zip-badge.mjml { background: #ddd6fe; color: #6d28d9; }
+    .zip-badge.img { background: #dbeafe; color: #1d4ed8; }
+    .zip-badge.txt { background: #d1fae5; color: #065f46; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4 6h12M4 10h12M4 14h7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Figma to Loops</h1>
+      <p>Export frames as MJML email templates</p>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="content">
+
+    <!-- Email frames list (Emailify-style) -->
+    <div>
+      <div class="section-label">Email frames</div>
+      <div class="frame-list" id="frame-list">
+        <div class="frame-list-empty">Scanning page…</div>
+      </div>
+    </div>
+
+    <!-- Paste link -->
+    <div>
+      <div class="section-label">Or paste a frame link</div>
+      <div class="link-row">
+        <input
+          id="link-input"
+          class="link-input"
+          type="text"
+          placeholder="https://figma.com/design/…?node-id=…"
+          spellcheck="false"
+          autocomplete="off"
+        />
+        <button id="link-btn" class="link-btn">Go</button>
+      </div>
+    </div>
+
+    <!-- ZIP preview (hidden until export) -->
+    <div id="zip-section" style="display:none">
+      <div class="section-label">Package contents</div>
+      <div class="zip-preview" id="zip-preview"></div>
+    </div>
+
+    <!-- How it works -->
+    <div id="steps-section">
+      <div class="section-label">How it works</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Select an <strong>email frame</strong> in Figma and click Export.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">A <strong>ZIP</strong> downloads with the MJML file and all images.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Host images, compile MJML → HTML via <strong>npx mjml</strong>, then import into <strong>Loops</strong>.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="status-bar idle" id="status-bar">
+      <div class="status-dot"></div>
+      <span id="status-text">Ready — select a frame to begin.</span>
+    </div>
+
+    <!-- Export button -->
+    <button class="export-btn" id="export-btn" disabled>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Export to Loops
+    </button>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Made for <a href="https://loops.so" target="_blank">Loops</a> · Outputs MJML + images
+  </div>
+
+<!-- INJECT_BUNDLE -->
+</body>
+</html>
