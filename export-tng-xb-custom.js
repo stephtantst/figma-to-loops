@@ -146,7 +146,7 @@ function figmaGet(apiPath) {
 
 const statCard = (icon, text) => `
             <tr>
-              <td style="background-color:#f9f9fb;border-radius:8px;padding:10px 16px;">
+              <td style="background-color:#f9f9fb;border-radius:8px;padding:10px 32px;">
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
                   <tr>
                     <td width="56" valign="middle" align="right" style="padding-right:16px;">
@@ -199,10 +199,10 @@ function generateMJML() {
       </mj-column>
     </mj-section>
 
-    <!-- Intro Paragraph — Hauora Regular 15px -->
+    <!-- Intro Paragraph — first line Hauora Bold, second line Regular, 15px -->
     <mj-section background-color="#ffffff" padding="10px 30px 10px 32px">
       <mj-column>
-        <mj-text font-family="'Hauora'" font-size="15px" color="#03102f" align="left" line-height="21px" padding="0">Unlock Malaysia: Recurring payments via Touch &#x2019;n Go are now live.<br/>Stop losing subscribers to payment friction &#x2014; let your Malaysian customers pay for cross-border subscriptions with their favorite local e-wallet.</mj-text>
+        <mj-text font-family="'Hauora'" font-size="15px" color="#03102f" align="left" line-height="1.4" padding="0"><span style="font-weight:700;">Unlock Malaysia: Recurring payments via Touch &#x2019;n Go are now live.</span><br/>Stop losing subscribers to payment friction - let your Malaysian customers pay for cross-border subscriptions with their favorite local e-wallet.</mj-text>
       </mj-column>
     </mj-section>
 
@@ -309,7 +309,7 @@ function generateMJML() {
       <mj-column>
         <mj-text font-family="'Inter'" font-size="13px" color="#cbcdd4" align="center" line-height="1.38" padding="0 0 16px 0">HitPay Payment Solutions Pte Ltd<br/>88 Market Street - Level #40-01, CapitaSpring<br/>Singapore, 048948</mj-text>
         <mj-image src="img/social.png" width="144px" align="center" alt="Follow us on social media" padding="0 0 16px 0" />
-        <mj-text font-family="'Inter'" font-size="12px" color="#cbcdd4" align="center" line-height="1.5" padding="0"><a href="{unsubscribe_link}" style="color:#cbcdd4;text-decoration:underline;">Unsubscribe</a></mj-text>
+        <mj-text font-family="'Hauora'" font-size="12px" color="#cbcdd4" align="center" line-height="1.5" padding="0"><a href="{unsubscribe_link}" style="color:#cbcdd4;text-decoration:underline;">Unsubscribe</a></mj-text>
       </mj-column>
     </mj-section>
 
